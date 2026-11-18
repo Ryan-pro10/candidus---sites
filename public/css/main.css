@@ -1,0 +1,23 @@
+/* Candidus: ponto de entrada do CSS.
+   A ordem dos imports é a ordem da cascata. Não reordene sem conferir o visual. */
+@import url("base/tokens.css");
+@import url("base/base.css");
+@import url("components/buttons.css");
+@import url("layout/header.css");
+@import url("sections/hero.css");
+@import url("layout/sections.css");
+@import url("sections/servicos.css");
+@import url("sections/cinematic.css");
+@import url("sections/como-funciona.css");
+@import url("sections/planos.css");
+@import url("sections/confianca.css");
+@import url("sections/cta-final.css");
+@import url("layout/footer.css");
+@import url("utilities/animations.css");
+@import url("layout/mobile-menu.css");
+@import url("base/responsive.css");
+@import url("components/logo.css");
+@import url("sections/relatorios.css");
+@import url("sections/contato.css");
+@import url("sections/fotos.css");
+@import url("pages/servico.css");

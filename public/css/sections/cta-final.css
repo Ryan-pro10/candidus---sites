@@ -1,0 +1,8 @@
+/* CTA final */
+.cta{position:relative;overflow:hidden;border-radius:var(--radius-lg);max-width:var(--maxw);margin:0 auto;padding:62px 40px;text-align:center;
+  background:
+    radial-gradient(500px 260px at 50% 0%, rgba(85,214,167,.22), transparent 60%),
+    linear-gradient(160deg,#123e52,#0c2840);
+  border:1px solid rgba(85,214,167,.3);box-shadow:var(--glow)}
+.cta h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:14px}
+.cta p{color:var(--gray);max-width:38rem;margin:0 auto 28px}

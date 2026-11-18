@@ -1,0 +1,4 @@
+/* real logo */
+.logo-head{height:50px;width:auto;display:block}
+.logo-foot{height:96px;width:auto;display:block;margin-bottom:4px}
+@media (max-width:760px){ .logo-head{height:42px} .logo-foot{height:80px} }

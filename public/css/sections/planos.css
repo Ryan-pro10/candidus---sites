@@ -1,0 +1,15 @@
+/* planos */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{background:linear-gradient(170deg,rgba(32,55,79,.55),rgba(26,47,69,.5));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px 26px;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.plan:hover{transform:translateY(-5px)}
+.plan.feat{border-color:rgba(85,214,167,.6);box-shadow:var(--glow);background:linear-gradient(170deg,rgba(35,74,95,.62),rgba(26,51,71,.56))}
+.plan .badge{align-self:flex-start;font-size:.66rem;letter-spacing:.14em;font-weight:700;text-transform:uppercase;color:#06281c;background:var(--mint);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+.plan h3{font-size:1.4rem;margin-bottom:6px}
+.plan .pdesc{font-size:.9rem;color:var(--gray);min-height:44px}
+.price{font-family:var(--ff-head);font-weight:800;color:var(--white);font-size:1.5rem;margin:16px 0 4px}
+.price small{font-weight:500;font-size:.8rem;color:var(--gray-dim)}
+.plan ul{list-style:none;margin:18px 0 24px;display:flex;flex-direction:column;gap:10px}
+.plan li{display:flex;gap:10px;font-size:.9rem;color:var(--gray)}
+.plan li svg{width:18px;height:18px;color:var(--mint);flex:none;margin-top:2px}
+.plan .btn{margin-top:auto;justify-content:center}
+.pending{color:var(--gold);font-weight:600}

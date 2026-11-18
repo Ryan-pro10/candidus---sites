@@ -1,0 +1,37 @@
+---
+// Barra de navegação fixa + painel do menu mobile.
+// home: true na página inicial (links viram âncoras "#secao"); false nas internas ("/#secao").
+// active: item marcado no menu ("inicio" na home, "servicos" nas páginas de serviço).
+interface Props { home?: boolean; active?: string }
+const { home = false, active = home ? "inicio" : "" } = Astro.props;
+const base = home ? "" : "/";
+---
+<header id="header">
+  <div class="wrap nav">
+    <a href={home ? "#inicio" : "/"} class="brand" aria-label="Candidus — Gestão Financeira">
+      <img class="logo-head" src="/assets/img/logo-header.png" alt="Candidus — Gestão Financeira" width="640" height="342">
+    </a>
+    <ul class="menu">
+      <li><a href={`${base}#inicio`} class:list={[{ active: active === "inicio" }]}>Início</a></li>
+      <li><a href={`${base}#servicos`} class:list={[{ active: active === "servicos" }]} aria-current={active === "servicos" ? "page" : undefined}>Serviços</a></li>
+      <li><a href={`${base}#como-funciona`}>Como funciona</a></li>
+      <li><a href={`${base}#planos`}>Planos</a></li>
+      <li><a href={`${base}#sobre`}>Sobre nós</a></li>
+      <li><a href={`${base}#contato`}>Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href={`${base}#contato`} class="btn btn-primary">Agendar conversa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href={`${base}#inicio`}>Início</a>
+  <a href={`${base}#servicos`}>Serviços</a>
+  <a href={`${base}#como-funciona`}>Como funciona</a>
+  <a href={`${base}#planos`}>Planos</a>
+  <a href={`${base}#sobre`}>Sobre nós</a>
+  <a href={`${base}#contato`}>Contato</a>
+  <a href={`${base}#contato`} class="btn btn-primary">Agendar conversa</a>
+</div>

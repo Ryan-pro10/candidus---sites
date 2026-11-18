@@ -1,0 +1,60 @@
+---
+---
+<!-- ===================== CONTATO / FALE COM UM ESPECIALISTA ===================== -->
+<section class="section contact" id="contato">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <span class="eyebrow reveal">Contato</span>
+        <h2 class="reveal d1">Fale com um especialista.</h2>
+        <p class="reveal d2">Conte rapidamente sobre sua empresa. Respondemos em até 1 dia útil.</p>
+        <ol class="contact-steps">
+          <li class="reveal d2"><span class="cs-num">1</span> Lemos sua mensagem e indicamos o especialista certo.</li>
+          <li class="reveal d3"><span class="cs-num">2</span> Marcamos uma conversa de 30 minutos, sem custo.</li>
+          <li class="reveal d4"><span class="cs-num">3</span> Você recebe uma proposta com escopo e prazo de implantação.</li>
+        </ol>
+      </div>
+
+      <div class="form-card reveal d2">
+        <h3>Solicitar diagnóstico</h3>
+        <form id="leadForm" novalidate>
+          <div class="field-grid">
+            <div class="field">
+              <label for="f-nome">Nome <span class="req">*</span></label>
+              <input id="f-nome" name="nome" type="text" placeholder="Seu nome completo" required>
+            </div>
+            <div class="field">
+              <label for="f-email">E-mail corporativo <span class="req">*</span></label>
+              <input id="f-email" name="email" type="email" placeholder="nome@empresa.com.br" required>
+            </div>
+            <div class="field">
+              <label for="f-empresa">Empresa <span class="opt">(opcional)</span></label>
+              <input id="f-empresa" name="empresa" type="text" placeholder="Nome da empresa">
+            </div>
+            <div class="field">
+              <label for="f-fat">Faturamento mensal <span class="req">*</span></label>
+              <select id="f-fat" name="faturamento" required>
+                <option value="" selected disabled>Selecione</option>
+                <option>Até R$ 50 mil</option>
+                <option>R$ 50 mil a R$ 200 mil</option>
+                <option>R$ 200 mil a R$ 1 milhão</option>
+                <option>Acima de R$ 1 milhão</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Como podemos ajudar? <span class="opt">(opcional)</span></label>
+            <textarea id="f-msg" name="mensagem" rows="4" placeholder="Ex.: hoje fazemos a conciliação em planilha e o fechamento atrasa."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Solicitar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="lgpd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Seus dados são usados só para este contato, conforme a LGPD.</p>
+        </form>
+        <div class="form-done" id="formDone" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+          <h3>Abrimos seu WhatsApp!</h3>
+          <p>É só enviar a mensagem que já preenchemos. Se não abrir, confira se o WhatsApp está instalado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

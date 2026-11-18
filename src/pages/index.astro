@@ -1,0 +1,29 @@
+---
+// Página inicial: cada seção é um componente em src/components/home/.
+import Base from "../layouts/Base.astro";
+import Hero from "../components/home/Hero.astro";
+import Servicos from "../components/home/Servicos.astro";
+import Relatorios from "../components/home/Relatorios.astro";
+import Cinematic from "../components/home/Cinematic.astro";
+import ComoFunciona from "../components/home/ComoFunciona.astro";
+import Planos from "../components/home/Planos.astro";
+import Confianca from "../components/home/Confianca.astro";
+import CtaFinal from "../components/home/CtaFinal.astro";
+import Contato from "../components/home/Contato.astro";
+---
+<Base
+  home
+  form
+  title="Candidus — BPO Financeiro e Controladoria"
+  description="Candidus BPO Financeiro: contas a pagar e receber, conciliação bancária, fluxo de caixa e relatórios gerenciais para você decidir com clareza e segurança."
+>
+  <Hero />
+  <Servicos />
+  <Relatorios />
+  <Cinematic />
+  <ComoFunciona />
+  <Planos />
+  <Confianca />
+  <CtaFinal />
+  <Contato />
+</Base>

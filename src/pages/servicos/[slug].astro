@@ -1,0 +1,118 @@
+---
+// Uma página por serviço, gerada a partir de src/data/servicos.js.
+import Base from "../../layouts/Base.astro";
+import IconArrow from "../../components/IconArrow.astro";
+import { servicos } from "../../data/servicos.js";
+
+export function getStaticPaths() {
+  return servicos.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+const { s } = Astro.props;
+const outros = servicos.filter((o) => o.slug !== s.slug).slice(0, 3);
+const nomeMin = s.nome.toLowerCase();
+---
+<Base
+  active="servicos"
+  title={`${s.nome} — Candidus BPO Financeiro`}
+  description={`${s.resumo} Conheça como a Candidus cuida de ${nomeMin} para a sua empresa.`}
+>
+<main>
+<!-- ===================== HERO DO SERVIÇO ===================== -->
+<section class="svc-hero" aria-labelledby="titulo">
+  <div class="wrap">
+    <nav aria-label="Você está em">
+      <ol class="crumbs">
+        <li><a href="/">Início</a></li>
+        <li><a href="/#servicos">Serviços</a></li>
+        <li><span aria-current="page">{s.nome}</span></li>
+      </ol>
+    </nav>
+    <div class="svc-hero-grid">
+      <div>
+        <div class="svc-ico" aria-hidden="true" set:html={s.icone} />
+        <span class="eyebrow" style="display:block;margin-top:22px">{s.nome}</span>
+        <h1 id="titulo">{s.titulo}</h1>
+        <p class="lead">{s.lead}</p>
+        <div class="actions">
+          <a href="/#contato" class="btn btn-primary">Agendar conversa <IconArrow /></a>
+          <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
+        </div>
+      </div>
+      <dl class="svc-facts">
+        {s.resumoLateral.map(([t, d]) => <div><dt>{t}</dt><dd>{d}</dd></div>)}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== O QUE FAZEMOS ===================== -->
+<section class="section" aria-labelledby="faz-titulo">
+  <div class="wrap svc-split">
+    <div>
+      <span class="eyebrow reveal">O que está incluído</span>
+      <h2 id="faz-titulo" class="reveal d1">O que fazemos em {nomeMin}</h2>
+      <p class="reveal d2">{s.resumo}</p>
+    </div>
+    <ul class="svc-list">
+      {s.oQueFazemos.map(([t, d], k) => (
+        <li class={`reveal d${(k % 3) + 1}`}><span class="ck" set:html={`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`} /><div><strong>{t}</strong>{d}</div></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section class="section" id="como-funciona" aria-labelledby="como-titulo" style="padding-top:0">
+  <div class="wrap svc-block">
+    <span class="eyebrow reveal">Como funciona</span>
+    <h2 id="como-titulo" class="reveal d1">Do documento ao relatório, em três passos</h2>
+    <ol class="svc-steps">
+      {s.passos.map(([t, d], k) => <li class={`reveal d${k + 1}`}><h3>{t}</h3><p>{d}</p></li>)}
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== DÚVIDAS ===================== -->
+<section class="section" aria-labelledby="faq-titulo" style="padding-top:0">
+  <div class="wrap svc-block">
+    <span class="eyebrow reveal">Dúvidas frequentes</span>
+    <h2 id="faq-titulo" class="reveal d1">Perguntas sobre {nomeMin}</h2>
+    <div class="svc-faq">
+      {s.perguntas.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OUTROS SERVIÇOS ===================== -->
+<section class="section svc-related" aria-labelledby="rel-titulo" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Outros serviços</span>
+    <h2 id="rel-titulo" style="font-size:clamp(1.6rem,3vw,2.2rem);margin-top:14px">Combine com outras rotinas</h2>
+    <div class="cards">
+      {outros.map((o) => (
+        <a href={`/servicos/${o.slug}/`} class="scard">
+          <div class="ico" set:html={o.icone} />
+          <h3>{o.nome}</h3>
+          <p>{o.resumo}</p>
+          <span class="arrow" aria-hidden="true"><IconArrow /></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="section" aria-labelledby="cta-titulo" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-cta">
+      <h2 id="cta-titulo">Quer tirar {nomeMin} da sua rotina?</h2>
+      <p>Conte como funciona hoje na sua empresa. Montamos uma proposta com escopo e prazo de implantação.</p>
+      <div class="actions">
+        <a href="/#contato" class="btn btn-primary">Agendar conversa <IconArrow /></a>
+        <a href="/#planos" class="btn btn-ghost">Ver os planos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+</Base>

@@ -1,0 +1,8 @@
+/* como funciona */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.steps::before{content:"";position:absolute;top:34px;left:7%;right:7%;height:2px;background:var(--line);z-index:0}
+.steps .prog{content:"";position:absolute;top:34px;left:7%;height:2px;background:linear-gradient(90deg,var(--mint),var(--mint-light));z-index:1;width:0;transition:width 1.4s ease;max-width:86%}
+.step{position:relative;z-index:2;text-align:left}
+.step .num{width:68px;height:68px;border-radius:50%;background:var(--navy-2);border:1px solid rgba(85,214,167,.35);display:grid;place-items:center;font-family:var(--ff-head);font-weight:800;font-size:1.2rem;color:var(--mint);margin-bottom:18px;box-shadow:0 0 0 6px rgba(8,24,43,1)}
+.step h3{font-size:1.12rem;margin-bottom:8px}
+.step p{font-size:.9rem}

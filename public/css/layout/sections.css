@@ -1,0 +1,7 @@
+/* ---------- sections ---------- */
+section{position:relative}
+.section{padding:84px 0}
+.sec-head{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:end;margin-bottom:46px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.sec-head p{color:var(--gray)}
+.sec-head .sh-right{display:flex;flex-direction:column;gap:18px}

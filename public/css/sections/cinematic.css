@@ -1,0 +1,12 @@
+/* cinematic */
+.cinematic{position:relative;overflow:hidden;border-radius:var(--radius-lg);margin:0 auto;max-width:var(--maxw);min-height:400px;display:flex;align-items:center;border:1px solid var(--line)}
+.cine-bg{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(600px 300px at 78% 22%, rgba(232,173,68,.22), transparent 60%),
+    linear-gradient(180deg,#0c3350 0%, #0a2742 40%, #07192c 100%);}
+.cine-sun{position:absolute;right:16%;top:32%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,236,196,.95),rgba(232,173,68,.5) 45%,transparent 70%);z-index:0;filter:blur(2px)}
+.cine-mts{position:absolute;left:0;right:0;bottom:0;z-index:1;width:100%}
+.cine-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(7,20,36,.92) 0%,rgba(7,20,36,.72) 42%,rgba(7,20,36,.15) 100%)}
+.cine-content{position:relative;z-index:3;padding:56px 48px;max-width:560px}
+.cine-content h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:14px 0 16px}
+.cine-content p{color:var(--gray);margin-bottom:26px;max-width:30rem}

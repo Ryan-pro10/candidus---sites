@@ -1,0 +1,36 @@
+/* responsive */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .services .cards{grid-template-columns:repeat(2,1fr)}
+  .plans{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .trust-sec .cards{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .menu,.nav-right .btn{display:none}
+  .burger{display:flex}
+  .sec-head{grid-template-columns:1fr}
+  .services .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .steps::before,.steps .prog{display:none}
+  .mini-cards{grid-template-columns:1fr 1fr}
+  .mini-cards .mini:last-child{grid-column:1 / -1} /* 3º card ocupa a linha inteira, sem buraco ao lado */
+  /* painel do hero: o seletor de período desce para cima do valor, que fica em uma linha só */
+  .dash-head{flex-direction:column-reverse;align-items:flex-start;gap:14px}
+  .dash-value{white-space:nowrap;font-size:1.9rem}
+  .dash-delta svg{flex:none}
+  .scard{min-height:0;padding:22px 20px 18px} /* cards de serviço mais compactos no celular */
+  .scard .ico{margin-bottom:14px}
+  .scard .arrow{margin-top:14px}
+  .cine-content{padding:40px 26px}
+  .f-grid{grid-template-columns:1fr}
+  .trust-sec .cards{grid-template-columns:1fr}
+  .trust .tnote{display:none}
+  .section{padding:62px 0}
+  .hero{padding:124px 0 50px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}

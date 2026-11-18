@@ -1,0 +1,29 @@
+---
+import { servicos } from "../../data/servicos.js";
+import IconArrow from "../IconArrow.astro";
+---
+<!-- ===================== SERVIÇOS ===================== -->
+<section class="section services" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Nossos serviços</span>
+        <h2 class="reveal d1">Gestão financeira completa para cada etapa da sua empresa.</h2>
+      </div>
+      <div class="sh-right reveal d2">
+        <p>Da rotina financeira aos relatórios que orientam suas decisões, organizamos suas informações para você focar no crescimento do negócio.</p>
+        <a href="#planos" class="btn btn-ghost" style="align-self:flex-start">Ver todos os planos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="cards">
+      {servicos.map((s, i) => (
+        <a href={`/servicos/${s.slug}/`} class={`scard reveal d${(i % 3) + 1}`}>
+          <div class="ico" set:html={s.icone} />
+          <h3>{s.nome}</h3>
+          <p>{s.resumo}</p>
+          <span class="arrow"><IconArrow /></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

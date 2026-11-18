@@ -1,0 +1,21 @@
+:root{
+  --navy-deep:#08182B;
+  --navy-2:#102A43;
+  --card:#20374F;
+  --card-2:#1a2f45;
+  --mint:#55D6A7;
+  --mint-light:#83F0C5;
+  --white:#FFFFFF;
+  --gray:#B8C7D6;
+  --gray-dim:#8699ac;
+  --gold:#E8AD44;
+  --line:rgba(184,199,214,.14);
+  --radius:18px;
+  --radius-lg:26px;
+  --shadow:0 24px 60px -24px rgba(0,0,0,.6);
+  --glow:0 0 0 1px rgba(85,214,167,.18), 0 18px 48px -18px rgba(85,214,167,.25);
+  --maxw:1180px;
+  --ff-head:"Plus Jakarta Sans",system-ui,sans-serif;
+  --ff-body:"Inter",system-ui,sans-serif;
+  color-scheme:dark;
+}

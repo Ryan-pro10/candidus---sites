@@ -1,0 +1,5 @@
+/* mobile menu panel */
+.mobile-panel{position:fixed;inset:0;z-index:49;background:rgba(7,18,32,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px;transform:translateX(100%);transition:transform .35s ease;visibility:hidden}
+.mobile-panel.open{transform:none;visibility:visible}
+.mobile-panel a{font-family:var(--ff-head);font-weight:700;font-size:1.5rem;color:var(--white);padding:14px 0;border-bottom:1px solid var(--line)}
+.mobile-panel .btn{margin-top:24px;justify-content:center}

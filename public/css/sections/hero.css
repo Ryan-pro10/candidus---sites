@@ -1,0 +1,38 @@
+/* ---------- hero ---------- */
+.hero{position:relative;padding:150px 0 70px;overflow:hidden}
+.aurora{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(900px 420px at 72% 12%, rgba(85,214,167,.22), transparent 60%),
+    radial-gradient(700px 400px at 90% 0%, rgba(131,240,197,.16), transparent 55%),
+    radial-gradient(1100px 600px at 10% 0%, rgba(16,42,67,.9), transparent 60%),
+    linear-gradient(180deg,#071424 0%, #08182B 55%, #0a1d33 100%);}
+.mountains{position:absolute;left:0;right:0;bottom:0;z-index:0;width:100%;height:auto;opacity:.9;pointer-events:none}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.3rem);margin:18px 0 20px}
+.hero h1 .l2{color:var(--mint)}
+.hero p.lead{font-size:1.08rem;max-width:34rem;color:var(--gray)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+
+/* dashboard demo */
+.dash{position:relative;background:linear-gradient(160deg,rgba(24,46,68,.55),rgba(12,28,44,.48));border:1px solid rgba(85,214,167,.22);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%)}
+.dash::after{content:"DEMONSTRATIVO";position:absolute;top:14px;right:16px;font-size:.56rem;letter-spacing:.18em;font-weight:700;color:var(--gold);background:rgba(232,173,68,.12);border:1px solid rgba(232,173,68,.3);padding:3px 8px;border-radius:6px}
+.dash-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;margin-top:18px} /* margin-top: espaço para a etiqueta DEMONSTRATIVO não cobrir o seletor */
+.dash-label{font-size:.82rem;color:var(--gray-dim)}
+.dash-pill{font-size:.76rem;color:var(--gray);border:1px solid var(--line);border-radius:999px;padding:5px 12px;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.dash-value{font-family:var(--ff-head);font-weight:800;font-size:2.15rem;color:var(--white);letter-spacing:-.02em}
+.dash-delta{color:var(--mint);font-weight:600;font-size:.92rem;margin-top:2px;display:flex;align-items:center;gap:6px}
+.chart{margin:14px 0 4px}
+.chart svg{width:100%;height:150px;display:block;overflow:visible}
+.chart .grid-x{display:flex;justify-content:space-between;font-size:.62rem;color:var(--gray-dim);margin-top:6px}
+.mini-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.mini{background:rgba(10,24,40,.4);border:1px solid var(--line);border-radius:14px;padding:13px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform .25s ease,border-color .25s ease}
+.mini:hover{transform:translateY(-4px);border-color:rgba(85,214,167,.4)}
+.mini .mi-ico{color:var(--mint);width:22px;height:22px;margin-bottom:8px}
+.mini .mi-k{font-size:.68rem;color:var(--gray-dim);line-height:1.25}
+.mini .mi-v{font-family:var(--ff-head);font-weight:700;color:var(--white);font-size:1rem;margin-top:3px}
+
+/* trust strip */
+.trust{position:relative;z-index:2;margin-top:48px;display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center}
+.trust .ti{display:flex;align-items:center;gap:10px;font-family:var(--ff-head);font-weight:600;font-size:.9rem;color:var(--white)}
+.trust .ti svg{width:22px;height:22px;color:var(--mint);flex:none}
+.trust .tnote{margin-left:auto;font-family:var(--ff-head);font-style:italic;color:var(--mint-light);font-size:1.05rem;transform:rotate(-4deg)}

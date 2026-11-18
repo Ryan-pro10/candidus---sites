@@ -1,0 +1,10 @@
+/* confiança */
+.trust-sec .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tcard{background:rgba(16,34,51,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:transform .3s ease,border-color .3s ease}
+.tcard:hover{transform:translateY(-5px);border-color:rgba(85,214,167,.4)}
+.tcard .ico{width:52px;height:52px;border-radius:14px;margin:0 auto 16px;display:grid;place-items:center;background:rgba(85,214,167,.1);color:var(--mint)}
+.tcard .ico svg{width:26px;height:26px}
+.tcard h4{font-size:1.02rem;margin-bottom:6px}
+.tcard p{font-size:.84rem}
+.testi{margin-top:22px;background:rgba(16,34,51,.5);border:1px dashed rgba(184,199,214,.3);border-radius:var(--radius);padding:22px 24px;display:flex;align-items:center;gap:14px;color:var(--gray-dim);font-size:.9rem}
+.testi svg{width:26px;height:26px;color:var(--mint);flex:none}
