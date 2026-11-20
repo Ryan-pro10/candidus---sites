@@ -1,4 +1,5 @@
 ---
+import { paraAba } from "../data/depoimentos.js";
 // Rodapé. home: true na página inicial.
 interface Props { home?: boolean }
 const { home = false } = Astro.props;
@@ -22,7 +23,7 @@ const base = home ? "" : "/";
       </div>
       <div class="f-col">
         <h5>Empresa</h5>
-        <a href={`${base}#planos`}>Planos</a><a href={`${base}#sobre`}>Sobre nós</a><a href={`${base}#como-funciona`}>Como funciona</a><a href={`${base}#contato`}>Contato</a>
+        <a href={`${base}#planos`}>Planos</a><a href={`${base}#sobre`}>Sobre nós</a>{paraAba.length > 0 && <a href="/depoimentos/">Depoimentos</a>}<a href={`${base}#como-funciona`}>Como funciona</a><a href={`${base}#contato`}>Contato</a>
       </div>
       <div class="f-col">
         <h5>Contato</h5>

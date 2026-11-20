@@ -1,0 +1,18 @@
+/* ---------- página /depoimentos/ ---------- */
+.depo-hero{padding-bottom:40px}
+.depo-hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);margin:14px 0 16px;max-width:20ch}
+.depo-hero .lead{max-width:58ch}
+.depo-grid{margin-top:0}
+.depo-empty-title{font-size:1.3rem;margin-bottom:6px}
+.depo-empty-text{margin-bottom:18px}
+
+/* etiqueta dos depoimentos de exemplo (só aparece em desenvolvimento) */
+.quote-card{position:relative}
+.quote-example{position:absolute;top:-11px;left:20px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2b1a00;background:var(--gold);padding:3px 10px;border-radius:999px}
+
+.testimonials-more{margin-top:22px}
+
+/* depoimentos na home, abaixo da imagem "Mais do que números" */
+.home-depo{padding-top:0}
+.home-depo-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.home-depo-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-top:12px;max-width:22ch}

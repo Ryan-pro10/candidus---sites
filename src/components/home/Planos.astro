@@ -1,54 +1,71 @@
 ---
+// Seção de planos. Os textos, preços e limites ficam em src/data/planos.js.
+import { planos } from "../../data/planos.js";
+
+const icones = {
+  camadas: '<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>',
+  barras: '<rect x="3" y="13" width="4.5" height="8" rx="1"/><rect x="9.75" y="8" width="4.5" height="13" rx="1"/><rect x="16.5" y="3" width="4.5" height="18" rx="1"/>',
+  alvo: '<circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/><path d="m12 12 7-7"/><path d="M16.5 3.5V6.5"/><path d="M17.5 7.5h3"/><path d="M16.5 6.5l3-3"/>',
+};
+const check = '<path d="M20 6 9 17l-5-5"/>';
+const barrinhas = '<path d="M4 20v-5"/><path d="M9 20V9"/><path d="M14 20v-8"/><path d="M19 20V4"/>';
 ---
 <!-- ===================== PLANOS ===================== -->
 <section class="section" id="planos">
   <div class="wrap">
-    <div class="sec-head" style="grid-template-columns:1fr;text-align:center;place-items:center">
-      <div>
-        <span class="eyebrow reveal">Planos</span>
-        <h2 class="reveal d1">Escolha o nível de apoio ideal para o seu momento.</h2>
-      </div>
+    <!-- div, não <header>: o CSS global deixa todo <header> fixo no topo -->
+    <div class="plans-head">
+      <span class="eyebrow plans-eyebrow reveal">Planos da Candidus</span>
+      <h2 class="reveal d1">Soluções de gestão financeira na medida do seu negócio</h2>
+      <p class="reveal d2">Escolha o plano ideal para a sua empresa e tenha um financeiro organizado, com controle, acompanhamento e resultados.</p>
     </div>
+
     <div class="plans">
-      <div class="plan reveal d1">
-        <h3>Essencial</h3>
-        <p class="pdesc">Para organizar a rotina financeira básica da empresa.</p>
-        <div class="price"><span class="pending">Sob consulta</span></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Contas a pagar e receber</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Conciliação bancária</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Relatório mensal simples</li>
-          <li class="config">• Limites operacionais: a definir</li>
-        </ul>
-        <a href="#contato" class="btn btn-ghost">Solicitar proposta</a>
-      </div>
-      <div class="plan feat reveal d2">
-        <span class="badge">Mais procurado</span>
-        <h3>Profissional</h3>
-        <p class="pdesc">Controle completo com visão gerencial para decidir melhor.</p>
-        <div class="price"><span class="pending">Sob consulta</span></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Tudo do Essencial</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Fluxo de caixa projetado</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Relatórios gerenciais completos</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Indicadores de desempenho</li>
-          <li class="config">• Limites operacionais: a definir</li>
-        </ul>
-        <a href="#contato" class="btn btn-primary">Solicitar proposta</a>
-      </div>
-      <div class="plan reveal d3">
-        <h3>Avançado</h3>
-        <p class="pdesc">Controladoria e acompanhamento próximo para operações maiores.</p>
-        <div class="price"><span class="pending">Sob consulta</span></div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Tudo do Profissional</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Múltiplas empresas / centros de custo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Reuniões gerenciais periódicas</li>
-          <li class="config">• Limites operacionais: a definir</li>
-        </ul>
-        <a href="#contato" class="btn btn-ghost">Solicitar proposta</a>
-      </div>
+      {planos.map((p, i) => (
+        <article class:list={["plan", `reveal d${i + 1}`, { feat: p.destaque }]} aria-labelledby={`plano-${p.id}`}>
+          {p.destaque && <span class="plan-badge">{p.destaque}</span>}
+
+          <div class="plan-top">
+            <svg class="plan-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icones[p.icone]} />
+            <div>
+              <h3 id={`plano-${p.id}`}>{p.nome}</h3>
+              <p class="pdesc">{p.descricao}</p>
+            </div>
+          </div>
+
+          <p class="price">
+            <span class="price-from">A partir de</span>
+            <span class="price-val">R$&nbsp;{p.preco}<small>/mês</small></span>
+          </p>
+
+          <h4 class="plan-sub">O que está incluído</h4>
+          <ul class="plan-list">
+            {p.incluido.map((item) => (
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />{item}</li>
+            ))}
+          </ul>
+
+          <div class="plan-limits">
+            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" set:html={barrinhas} /><span>Limites do plano</span></h4>
+            {Array.isArray(p.limites) ? (
+              <dl>
+                {p.limites.map(([valor, rotulo]) => (
+                  <div><dt>{rotulo}</dt><dd>{valor}</dd></div>
+                ))}
+              </dl>
+            ) : (
+              <p>{p.limites}</p>
+            )}
+          </div>
+
+          <p class="plan-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>
+            Enquadramento mediante diagnóstico financeiro.
+          </p>
+
+          <a href="#contato" class:list={["btn", p.destaque ? "btn-primary" : "btn-ghost"]}>Solicitar proposta<span class="sr-only"> do plano {p.nome}</span></a>
+        </article>
+      ))}
     </div>
-    <p class="reveal" style="text-align:center;margin-top:22px;font-size:.84rem;color:var(--gray-dim)">Valores, limites de lançamentos e escopo exato são definidos conforme a proposta comercial da Candidus.</p>
   </div>
 </section>

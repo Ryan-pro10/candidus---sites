@@ -25,8 +25,9 @@
   var sections = ['inicio','servicos','como-funciona','planos','sobre','contato'];
   var links = Array.prototype.slice.call(document.querySelectorAll('.menu a'));
   function spy(){
-    var pos = window.scrollY + 120, cur = 'inicio';
-    sections.forEach(function(id){ var el=document.getElementById(id); if(el && el.offsetTop<=pos) cur=id; });
+    // a seção ativa é a que começa mais perto (acima) da posição atual, independente da ordem da lista
+    var pos = window.scrollY + 120, cur = 'inicio', best = -1;
+    sections.forEach(function(id){ var el=document.getElementById(id); if(el && el.offsetTop<=pos && el.offsetTop>best){ best=el.offsetTop; cur=id; } });
     links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href')==='#'+cur); });
   }
   /* só na página inicial: nas páginas internas o item ativo vem marcado no HTML */

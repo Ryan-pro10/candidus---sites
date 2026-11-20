@@ -5,6 +5,9 @@
 interface Props { home?: boolean; active?: string }
 const { home = false, active = home ? "inicio" : "" } = Astro.props;
 const base = home ? "" : "/";
+// a aba Depoimentos só aparece quando há o que mostrar (no site publicado: só depoimentos reais)
+import { paraAba } from "../data/depoimentos.js";
+const temDepoimentos = paraAba.length > 0;
 ---
 <header id="header">
   <div class="wrap nav">
@@ -17,6 +20,7 @@ const base = home ? "" : "/";
       <li><a href={`${base}#como-funciona`}>Como funciona</a></li>
       <li><a href={`${base}#planos`}>Planos</a></li>
       <li><a href={`${base}#sobre`}>Sobre nós</a></li>
+      {temDepoimentos && <li><a href="/depoimentos/" class:list={[{ active: active === "depoimentos" }]} aria-current={active === "depoimentos" ? "page" : undefined}>Depoimentos</a></li>}
       <li><a href={`${base}#contato`}>Contato</a></li>
     </ul>
     <div class="nav-right">
@@ -32,6 +36,7 @@ const base = home ? "" : "/";
   <a href={`${base}#como-funciona`}>Como funciona</a>
   <a href={`${base}#planos`}>Planos</a>
   <a href={`${base}#sobre`}>Sobre nós</a>
+  {temDepoimentos && <a href="/depoimentos/">Depoimentos</a>}
   <a href={`${base}#contato`}>Contato</a>
   <a href={`${base}#contato`} class="btn btn-primary">Agendar conversa</a>
 </div>

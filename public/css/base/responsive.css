@@ -1,8 +1,13 @@
 /* responsive */
+/* menu do topo vira botão (☰) abaixo de 1100px: com 7 itens ele não cabe em tablets e notebooks pequenos */
+@media (max-width:1099px){
+  .menu{display:none}
+  .burger{display:flex}
+}
 @media (max-width:1024px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .services .cards{grid-template-columns:repeat(2,1fr)}
-  .plans{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}
   .trust-sec .cards{grid-template-columns:repeat(2,1fr)}
   .f-grid{grid-template-columns:1fr 1fr}
 }

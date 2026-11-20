@@ -1,0 +1,33 @@
+---
+// Card de um depoimento. Usado na home (seção "Por que a Candidus") e na página /depoimentos/.
+interface Props {
+  d: { texto: string; nome: string; cargo?: string; empresa?: string; nota?: number; foto?: string; exemplo?: boolean };
+  i?: number;
+}
+const { d, i = 0 } = Astro.props;
+const iniciais = d.nome.trim().split(/\s+/).filter(Boolean).map((p) => p[0]).slice(0, 2).join("").toUpperCase();
+const estrela = '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>';
+---
+<figure class={`quote-card reveal d${(i % 3) + 1}`}>
+  {d.exemplo && <span class="quote-example" title="Só aparece no modo de desenvolvimento">Exemplo · não vai para o site publicado</span>}
+  <div class="quote-top">
+    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v4a2 2 0 0 0 2 2h3a1 1 0 0 1 1 1c0 1.7-1.3 3-3 3v2c2.8 0 5-2.2 5-5V9a2 2 0 0 0-1-2Zm11 0h-4a3 3 0 0 0-3 3v4a2 2 0 0 0 2 2h3a1 1 0 0 1 1 1c0 1.7-1.3 3-3 3v2c2.8 0 5-2.2 5-5V9a2 2 0 0 0-1-2Z"/></svg>
+    {d.nota && (
+      <span class="quote-stars" role="img" aria-label={`Nota ${d.nota} de 5`}>
+        {Array.from({ length: 5 }, (_, k) => (
+          <svg viewBox="0 0 24 24" class:list={{ off: k >= (d.nota ?? 0) }} fill="currentColor" aria-hidden="true" set:html={estrela} />
+        ))}
+      </span>
+    )}
+  </div>
+  <blockquote>{d.texto}</blockquote>
+  <figcaption>
+    {d.foto
+      ? <img class="quote-avatar" src={d.foto} alt="" width="48" height="48" loading="lazy" />
+      : <span class="quote-avatar" aria-hidden="true">{iniciais}</span>}
+    <span>
+      <strong>{d.nome}</strong>
+      {(d.cargo || d.empresa) && <span class="quote-role">{[d.cargo, d.empresa].filter(Boolean).join(" · ")}</span>}
+    </span>
+  </figcaption>
+</figure>

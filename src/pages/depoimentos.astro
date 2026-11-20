@@ -1,0 +1,61 @@
+---
+// Aba "Depoimentos": todos os depoimentos de src/data/depoimentos.js.
+// Com `npm run dev` também mostra os exemplos inventados (marcados); no site publicado, só os reais.
+import Base from "../layouts/Base.astro";
+import IconArrow from "../components/IconArrow.astro";
+import QuoteCard from "../components/QuoteCard.astro";
+import { paraAba } from "../data/depoimentos.js";
+import { compromissos } from "../data/compromissos.js";
+---
+<Base
+  active="depoimentos"
+  title="Depoimentos de clientes — Candidus BPO Financeiro"
+  description="O que empresas atendidas pela Candidus dizem sobre a organização financeira, a conciliação e os relatórios mensais."
+>
+<main>
+<section class="svc-hero depo-hero" aria-labelledby="titulo">
+  <div class="wrap">
+    <nav aria-label="Você está em">
+      <ol class="crumbs">
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Depoimentos</span></li>
+      </ol>
+    </nav>
+    <span class="eyebrow">Depoimentos</span>
+    <h1 id="titulo">O que dizem as empresas que confiam na Candidus</h1>
+    <p class="lead">Relatos de clientes sobre como ficou a rotina financeira depois de terceirizar contas, conciliação e relatórios.</p>
+  </div>
+</section>
+
+<section class="section depo-list" aria-label="Depoimentos" style="padding-top:8px">
+  <div class="wrap">
+    {paraAba.length > 0 ? (
+      <div class="testimonials-grid depo-grid">
+        {paraAba.map((d, i) => <QuoteCard d={d} i={i} />)}
+      </div>
+    ) : (
+      <div class="commitments">
+        <h2 class="depo-empty-title">Em breve, depoimentos de clientes por aqui.</h2>
+        <p class="depo-empty-text">Enquanto isso, estes são os nossos compromissos com cada empresa atendida:</p>
+        <ul>
+          {compromissos.map((c) => <li><span><strong>{c.titulo}</strong>{c.texto}</span></li>)}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="cta-titulo" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-cta">
+      <h2 id="cta-titulo">Quer ser o próximo a organizar o financeiro?</h2>
+      <p>Conte como funciona hoje na sua empresa. Montamos uma proposta com escopo e prazo de implantação.</p>
+      <div class="actions">
+        <a href="/#contato" class="btn btn-primary">Agendar conversa <IconArrow /></a>
+        <a href="/#planos" class="btn btn-ghost">Ver os planos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+</Base>

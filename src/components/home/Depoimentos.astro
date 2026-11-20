@@ -1,0 +1,26 @@
+---
+// Depoimentos na home, logo abaixo da imagem "Mais do que números".
+// Site publicado: só depoimentos reais e autorizados (src/data/depoimentos.js); sem nenhum, a seção não aparece.
+// `npm run dev`: também os exemplos inventados, com a etiqueta "Exemplo".
+import { paraAba } from "../../data/depoimentos.js";
+import QuoteCard from "../QuoteCard.astro";
+
+const lista = paraAba.slice(0, 3);
+---
+{lista.length > 0 && (
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section class="section home-depo" id="depoimentos" aria-labelledby="home-depo-titulo">
+    <div class="wrap">
+      <div class="home-depo-head">
+        <div>
+          <span class="eyebrow reveal">Depoimentos</span>
+          <h2 id="home-depo-titulo" class="reveal d1">Quem já organizou o financeiro com a Candidus</h2>
+        </div>
+        {paraAba.length > 3 && <a href="/depoimentos/" class="btn btn-ghost reveal d2">Ver todos os depoimentos</a>}
+      </div>
+      <div class:list={["testimonials-grid", { "is-single": lista.length === 1 }]}>
+        {lista.map((d, i) => <QuoteCard d={d} i={i} />)}
+      </div>
+    </div>
+  </section>
+)}

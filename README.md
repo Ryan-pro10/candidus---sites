@@ -31,6 +31,10 @@ src/
                                 Hero · Servicos · Relatorios · Cinematic · ComoFunciona
                                 Planos · Confianca · CtaFinal · Contato
   data/servicos.js              TEXTOS DOS SERVIÇOS: cards da home + páginas de cada serviço
+  data/planos.js                planos, preços e limites
+  data/depoimentos.js           depoimentos de clientes (home, abaixo da imagem, e página /depoimentos/)
+  data/compromissos.js          compromissos da seção "Por que a Candidus"
+docs/pedido-de-depoimento.md    modelos de mensagem para pedir depoimentos aos clientes
 public/                         copiado como está para o site final
   css/main.css                  importa os demais arquivos de CSS, na ordem da cascata
   css/{base,components,layout,sections,utilities,pages}/
@@ -43,6 +47,8 @@ public/                         copiado como está para o site final
 
 - **Mudar o texto de um serviço:** edite `src/data/servicos.js`. O card da home e a página do serviço mudam juntos.
 - **Criar um serviço novo:** acrescente um item em `src/data/servicos.js`. A página `/servicos/<slug>/` é criada sozinha.
+- **Mudar preço ou limite de um plano:** `src/data/planos.js`.
+- **Publicar um depoimento:** peça ao cliente com o modelo de `docs/pedido-de-depoimento.md` e cadastre em `src/data/depoimentos.js` com `autorizado: true`. Eles aparecem abaixo da imagem "Mais do que números", na página /depoimentos/ e o link entra no menu. Os exemplos inventados do mesmo arquivo só aparecem com `npm run dev`.
 - **Mudar um link do menu ou o logo:** `src/components/Header.astro`. Vale para todas as páginas.
 - **Número do WhatsApp do formulário:** variável `WHATSAPP` em `public/js/formulario.js` (hoje um número provisório).
 - **Domínio:** quando tiver, preencha `site` em `astro.config.mjs`.
